@@ -1,7 +1,10 @@
+import { useState } from "react"
 import { Button, Form } from "react-bootstrap"
 
 export const Formulario = () => {
+    const [name, setName] = useState("")
   return (
+
     <>
         <Form>
             <Form.Group className="mb-3" controlId="nombre">
