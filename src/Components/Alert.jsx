@@ -1,8 +1,4 @@
 import React from "react";
-export const Alert = () => {
-  return (
-    <div>
-      <alert>AAA</alert>
-    </div>
-  );
+export const Alert = ({ alertMessage, alertState }) => {
+  return <div>{alertState ? alertMessage : null}</div>;
 };

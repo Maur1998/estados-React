@@ -7,7 +7,7 @@ function App() {
   const [alertMessage, setAlertMessage] = useState("");
   return (
     <>
-      <Registro setAlertMessage={setAlertMessage} />
+      <Registro setAlertMessage={setAlertMessage} alertMessage={alertMessage} />
     </>
   );
 }

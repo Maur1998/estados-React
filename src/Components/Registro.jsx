@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { SocialButton } from "./SocialButton";
 import { Formulario } from "./Formulario";
 import { Alert } from "./Alert";
-export const Registro = () => {
+export const Registro = ({ setAlertMessage, alertMessage }) => {
+  const [alertState, setAlertState] = useState(false);
   return (
     <div>
       <h1>Crea una cuenta</h1>
@@ -12,8 +13,11 @@ export const Registro = () => {
         <SocialButton icon={"fa-brands fa-linkedin-in fa-2xl"} />
       </div>
       <p>O usa tu email para registrarte</p>
-      <Formulario />
-      <Alert />
+      <Formulario
+        setAlertMessage={setAlertMessage}
+        setAlertState={setAlertState}
+      />
+      <Alert alertMessage={alertMessage} alertState={alertState} />
     </div>
   );
 };
