@@ -11,11 +11,19 @@ export const Formulario = ({
   const [contraseña2, setContraseña2] = useState("");
 
   function checkInputs() {
-    if (name && email && contraseña && contraseña2) {
+    if (
+      name &&
+      email &&
+      contraseña &&
+      contraseña2 &&
+      contraseña == contraseña2 &&
+      email.includes("@") &&
+      email.includes(".")
+    ) {
       setAlertMessage("Registro completo");
       setAlertType("success");
     } else {
-      setAlertMessage("Existen campos vacios");
+      setAlertMessage("Existen campos vacios o invalidos");
       setAlertType("danger");
     }
     setAlertState(true);
