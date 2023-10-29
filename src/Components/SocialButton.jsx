@@ -1,5 +1,5 @@
 import React from "react";
 
-export const SocialButtonComponent = () => {
+export const SocialButton = () => {
   return <div>SocialButtonComponent</div>;
 };
