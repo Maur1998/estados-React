@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { SocialButton } from "./SocialButton";
 import { Formulario } from "./Formulario";
-import { Alert } from "./Alert";
+import { AlertComp } from "./Alert";
 export const Registro = ({ setAlertMessage, alertMessage }) => {
   const [alertState, setAlertState] = useState(false);
+  const [alertType, setAlertType] = useState("");
   return (
     <div className="registro">
       <h1>Crea una cuenta</h1>
@@ -16,8 +17,13 @@ export const Registro = ({ setAlertMessage, alertMessage }) => {
       <Formulario
         setAlertMessage={setAlertMessage}
         setAlertState={setAlertState}
+        setAlertType={setAlertType}
       />
-      <Alert alertMessage={alertMessage} alertState={alertState} />
+      <AlertComp
+        alertMessage={alertMessage}
+        alertState={alertState}
+        alertType={alertType}
+      />
     </div>
   );
 };

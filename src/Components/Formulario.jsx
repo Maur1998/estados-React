@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export const Formulario = ({ setAlertState, setAlertMessage }) => {
+export const Formulario = ({
+  setAlertState,
+  setAlertMessage,
+  setAlertType,
+}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
@@ -9,8 +13,10 @@ export const Formulario = ({ setAlertState, setAlertMessage }) => {
   function checkInputs() {
     if (name && email && contraseña && contraseña2) {
       setAlertMessage("Registro completo");
+      setAlertType("success");
     } else {
       setAlertMessage("Existen campos vacios");
+      setAlertType("danger");
     }
     setAlertState(true);
   }
