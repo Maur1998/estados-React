@@ -11,11 +11,19 @@ export const Formulario = ({
   const [contrasena2, setContrasena2] = useState("");
 
   function checkInputs() {
-    if (name && email && contrasena && contrasena2) {
+    if (
+      name &&
+      email &&
+      contrasena &&
+      contrasena2 &&
+      contrasena == contrasena2 &&
+      email.includes("@") &&
+      email.includes(".")
+    ) {
       setAlertMessage("Registro completo");
       setAlertType("success");
     } else {
-      setAlertMessage("Existen campos vacios");
+      setAlertMessage("Existen campos vacios o invalidos");
       setAlertType("danger");
     }
     setAlertState(true);
