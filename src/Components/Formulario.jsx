@@ -7,11 +7,11 @@ export const Formulario = ({
 }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [contraseña, setContraseña] = useState("");
-  const [contraseña2, setContraseña2] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [contrasena2, setContrasena2] = useState("");
 
   function checkInputs() {
-    if (name && email && contraseña && contraseña2) {
+    if (name && email && contrasena && contrasena2) {
       setAlertMessage("Registro completo");
       setAlertType("success");
     } else {
@@ -34,7 +34,7 @@ export const Formulario = ({
       let html = "";
       alert1.innerHTML = html;
     }
-    if (contraseña != contraseña2) {
+    if (contrasena != contrasena2) {
       let html = `
             <p style="color:red">Las contraseñas no coinciden</p>
             `;
@@ -67,14 +67,14 @@ export const Formulario = ({
           type="password"
           placeholder="Contraseña"
           onChange={(e) => {
-            setContraseña(e.target.value);
+            setContrasena(e.target.value);
           }}
         />
         <input
           type="password"
           placeholder="Confirma tu contraseña"
           onChange={(e) => {
-            setContraseña2(e.target.value);
+            setContrasena2(e.target.value);
           }}
         />
         <p id="alert2"></p>
