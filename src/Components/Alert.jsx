@@ -1,6 +1,13 @@
-
-export const Alert = () => {
+import { Alert } from "react-bootstrap";
+import React from "react";
+export const AlertComp = ({ alertMessage, alertState, alertType }) => {
   return (
-    <div>Alert</div>
-  )
-}
+    <>
+      {alertState ? (
+        <Alert style={{ marginTop: "1rem" }} variant={alertType}>
+          {alertMessage}
+        </Alert>
+      ) : null}
+    </>
+  );
+};
