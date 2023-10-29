@@ -5,7 +5,7 @@ import { Alert } from "./Alert";
 export const Registro = ({ setAlertMessage, alertMessage }) => {
   const [alertState, setAlertState] = useState(false);
   return (
-    <div>
+    <div className="registro">
       <h1>Crea una cuenta</h1>
       <div className="icon-container">
         <SocialButton icon={"fa-brands fa-facebook fa-2xl"} />
