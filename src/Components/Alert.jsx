@@ -1,8 +1,8 @@
 import React from "react";
 export const Alert = () => {
   return (
-  <div>
-    
-  </div>
+    <div>
+      <alert>AAA</alert>
+    </div>
   );
 };
