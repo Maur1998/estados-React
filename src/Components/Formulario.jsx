@@ -1,3 +1,4 @@
+import Alert from 'react-bootstrap/Alert';
 import { useState } from "react"
 
 export const Formulario = () => {
@@ -12,7 +13,7 @@ export const Formulario = () => {
         event.preventDefault();
         if (!email.includes('@') || !email.includes('.')){
             let html = `
-            <p>El debe estar en el formato correcto</p>
+            <p style="color:red">El email debe estar en el formato correcto</p>
             `
             alert1.innerHTML = html;
         } else{
@@ -21,7 +22,7 @@ export const Formulario = () => {
         }
         if(contraseña != contraseña2){
             let html = `
-            <p>Las contraseñas no coinciden</p>
+            <p style="color:red">Las contraseñas no coinciden</p>
             `
             alert2.innerHTML = html;
         } else {
@@ -40,7 +41,7 @@ export const Formulario = () => {
             <input type="password" placeholder="Confirma tu contraseña" onChange={(e)=>{setContraseña2(e.target.value)}} />
             <p id="alert2"></p>
 
-            <button variant="primary" type="submit">
+            <button className="btn btn-success" variant="primary" type="submit">
                 Registrarse
             </button>
         </form>
