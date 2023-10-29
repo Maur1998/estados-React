@@ -7,40 +7,43 @@ export const Formulario = () => {
     const [contraseña2, setContraseña2] = useState("")
 
     function handleSubmit(){
-        let regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)/;
         let alert1 = document.querySelector("#alert1")
+        let alert2 = document.querySelector("#alert2")
         event.preventDefault();
-        if(!regex.test(contraseña)){
+        if (!email.includes('@') || !email.includes('.')){
             let html = `
-            <p>La contraseña debe llevar por lo menos una letra mayúscula, una minúscula y un número</p>
+            <p>El debe estar en el formato correcto</p>
             `
             alert1.innerHTML = html;
-        }
-        else {
-            let html =  ""
+        } else{
+            let html = ""
             alert1.innerHTML = html;
         }
         if(contraseña != contraseña2){
-            alert("Las contraseñas no coinciden")
-        }
-        else if (!email.includes('@') || !email.includes('.')){
-            alert("El email debe estar en el formato correcto")
+            let html = `
+            <p>Las contraseñas no coinciden</p>
+            `
+            alert2.innerHTML = html;
+        } else {
+            let html = ""
+            alert2.innerHTML = html;
         }
     }
   return (
 
-    <>
-        <form onSubmit={handleSubmit}>
+    <div className="container">
+        <form className="form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Nombre" onChange={(e)=>{setName(e.target.value)}} />
             <input type="text" placeholder="tuemail@ejemplo.com" onChange={(e)=>{setEmail(e.target.value)}} />
-            <input type="password" placeholder="Contraseña" onChange={(e)=>{setContraseña(e.target.value)}} />
             <div id="alert1"></div>
+            <input type="password" placeholder="Contraseña" onChange={(e)=>{setContraseña(e.target.value)}} />
             <input type="password" placeholder="Confirma tu contraseña" onChange={(e)=>{setContraseña2(e.target.value)}} />
+            <p id="alert2"></p>
 
             <button variant="primary" type="submit">
                 Registrarse
             </button>
         </form>
-    </>
+    </div>
   )
 }
